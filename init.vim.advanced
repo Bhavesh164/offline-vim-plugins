@@ -117,6 +117,8 @@ Plug 'Bhavesh164/cool-vim'
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired' " browse quick fix list using [q ]q
 call plug#end()
 
 
