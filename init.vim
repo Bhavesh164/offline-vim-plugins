@@ -112,6 +112,8 @@ Plug 'Bhavesh164/vim-cpp'
 Plug 'Bhavesh164/cool-vim'
 "Plug 'wellle/context.vim' " sticky function header
 Plug 'nvim-treesitter/nvim-treesitter-context'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired' " browse quick fix list using [q ]q
 call plug#end()
 
 " fff file manager hot key
