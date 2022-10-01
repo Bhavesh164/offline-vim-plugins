@@ -110,7 +110,7 @@ Plug 'tpope/vim-abolish' " convert into upper,snake case
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
-Plug 'gelguy/wilder.nvim'
+Plug 'gelguy/wilder.nvim' "autocomplete in command line, search :updateremoteplugins if python not worked
 Plug 'Bhavesh164/vim-cpp'
 Plug 'Bhavesh164/cool-vim'
 "Plug 'wellle/context.vim' " sticky function header
