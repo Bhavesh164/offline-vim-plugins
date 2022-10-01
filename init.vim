@@ -116,6 +116,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired' " browse quick fix list using [q ]q
 Plug 'Bhavesh164/nvim-blame-line'
 Plug 'RRethy/vim-illuminate' " highlight vairables
+Plug 'williamboman/mason.nvim' "modern lsp installer
 call plug#end()
 
 " fff file manager hot key
@@ -334,4 +335,8 @@ require'treesitter-context'.setup{
         },
     },
 }
+EOF
+
+lua << EOF
+require("mason").setup()
 EOF
