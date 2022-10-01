@@ -114,6 +114,8 @@ Plug 'Bhavesh164/cool-vim'
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired' " browse quick fix list using [q ]q
+Plug 'Bhavesh164/nvim-blame-line'
+Plug 'RRethy/vim-illuminate' " highlight vairables
 call plug#end()
 
 " fff file manager hot key
