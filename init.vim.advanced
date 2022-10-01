@@ -119,6 +119,8 @@ Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired' " browse quick fix list using [q ]q
+Plug 'Bhavesh164/nvim-blame-line'
+Plug 'RRethy/vim-illuminate' " highlight vairables
 call plug#end()
 
 
