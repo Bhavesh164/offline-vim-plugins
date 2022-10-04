@@ -343,3 +343,7 @@ EOF
 lua << EOF
 require("mason").setup()
 EOF
+
+" indentation jumping, sometimes useful
+noremap <silent> <M-k> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
+noremap <silent> <M-j> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
