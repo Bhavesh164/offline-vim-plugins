@@ -117,7 +117,8 @@ Plug 'tpope/vim-unimpaired' " browse quick fix list using [q ]q
 Plug 'Bhavesh164/nvim-blame-line'
 Plug 'RRethy/vim-illuminate' " highlight vairables
 Plug 'williamboman/mason.nvim' "modern lsp installer
-Plug 'adinapoli/vim-markmultiple' " cntrl+n to select a workd
+Plug 'adinapoli/vim-markmultiple' " cntrl+n to select a word
+Plug 'AndrewRadev/deleft.vim' "dh keybinding to delete blocks like if/ try,catch, div
 call plug#end()
 
 " fff file manager hot key
