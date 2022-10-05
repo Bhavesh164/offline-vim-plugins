@@ -112,6 +112,8 @@ Plug 'Bhavesh164/vim-cpp'
 Plug 'Bhavesh164/cool-vim'
 "Plug 'wellle/context.vim' " sticky function header
 Plug 'nvim-treesitter/nvim-treesitter-context'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired' " browse quick fix list using [q ]q
 Plug 'Bhavesh164/nvim-blame-line'
