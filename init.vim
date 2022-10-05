@@ -120,6 +120,7 @@ Plug 'williamboman/mason.nvim' "modern lsp installer
 Plug 'adinapoli/vim-markmultiple' " cntrl+n to select a word
 Plug 'AndrewRadev/deleft.vim' "dh keybinding to delete blocks like if/ try,catch, div
 Plug 'AndrewRadev/tagalong.vim' "rename a html tag
+Plug 'AndrewRadev/multichange.vim' "mark multiple advanced version
 call plug#end()
 
 " fff file manager hot key
