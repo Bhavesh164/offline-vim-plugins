@@ -350,3 +350,11 @@ EOF
 " indentation jumping, sometimes useful
 noremap <silent> <M-k> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
 noremap <silent> <M-j> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
+
+"function to get new line with semi colon
+
+fun! NewLine()
+    let l:save = winsaveview()
+	keeppatterns '<,'>s/;/&\r/g | norm dd
+    call winrestview(l:save)
+endfun
