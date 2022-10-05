@@ -123,6 +123,7 @@ Plug 'williamboman/mason.nvim' "modern lsp installer
 Plug 'AndrewRadev/deleft.vim' "dh keybinding to delete blocks like if/ try,catch, div
 Plug 'AndrewRadev/tagalong.vim' "rename a html tag
 Plug 'AndrewRadev/multichange.vim' "mark multiple advanced version
+Plug 'AndrewRadev/splitjoin.vim'  " bindings are gJ and gS
 call plug#end()
 
 " fff file manager hot key
