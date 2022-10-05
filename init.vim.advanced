@@ -122,9 +122,10 @@ Plug 'tpope/vim-unimpaired' " browse quick fix list using [q ]q
 Plug 'Bhavesh164/nvim-blame-line'
 Plug 'RRethy/vim-illuminate' " highlight vairables
 Plug 'williamboman/mason.nvim' "modern lsp installer plugin
-Plug 'adinapoli/vim-markmultiple' " cntrl+n to select a word
+" Plug 'adinapoli/vim-markmultiple' " cntrl+n to select a word
 Plug 'AndrewRadev/deleft.vim' "dh keybinding to delete blocks like if/ try,catch, div
 Plug 'AndrewRadev/tagalong.vim' "rename a html tag
+Plug 'AndrewRadev/multichange.vim' "mark multiple advanced version
 call plug#end()
 
 
