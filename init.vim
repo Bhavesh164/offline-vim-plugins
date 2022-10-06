@@ -84,7 +84,7 @@ Plug 'neovim/nvim-lspconfig', { 'tag': 'v0.1.2'}
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/nvim-cmp', {'commit':'e23de1f2b4e32bc6d9a37ad3458f2924973df628'}
+Plug 'hrsh7th/nvim-cmp' ", {'commit':'e23de1f2b4e32bc6d9a37ad3458f2924973df628'}
 
 " For vsnip users.
 Plug 'hrsh7th/cmp-vsnip'
