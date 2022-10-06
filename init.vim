@@ -124,6 +124,7 @@ Plug 'AndrewRadev/deleft.vim' "dh keybinding to delete blocks like if/ try,catch
 Plug 'AndrewRadev/tagalong.vim' "rename a html tag
 Plug 'AndrewRadev/multichange.vim' "mark multiple advanced version
 Plug 'AndrewRadev/splitjoin.vim'  " bindings are gJ and gS
+Plug 'AckslD/nvim-neoclip.lua' "clipboard manager for telescope
 call plug#end()
 
 " fff file manager hot key
@@ -149,7 +150,9 @@ let g:html_indent_inctags = "html,body,head"
 "copy file path 
 nnoremap <Leader>fc :let @+=expand('%:p')<CR> 
 lua << EOF
+require('neoclip').setup()
 require('telescope').setup{ defaults = { file_ignore_patterns = {"vendor"} } }
+require('telescope').load_extension "neoclip"
 EOF
 " subertab change configuration
 let g:SuperTabDefaultCompletionType = "<c-n>"
