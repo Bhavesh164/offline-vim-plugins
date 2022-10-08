@@ -362,3 +362,7 @@ fun! NewLine()
 	keeppatterns '<,'>s/;/&\r/g | norm dd
     call winrestview(l:save)
 endfun
+
+"set color scheme after plugin is initialized
+set termguicolors
+colorscheme onedark
