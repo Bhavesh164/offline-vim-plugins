@@ -125,6 +125,7 @@ Plug 'AndrewRadev/tagalong.vim' "rename a html tag
 Plug 'AndrewRadev/multichange.vim' "mark multiple advanced version
 Plug 'AndrewRadev/splitjoin.vim'  " bindings are gJ and gS
 Plug 'AckslD/nvim-neoclip.lua' "clipboard manager for telescope
+Plug 'm-demare/hlargs.nvim'  " make function arguments color separate
 call plug#end()
 
 " fff file manager hot key
@@ -366,3 +367,7 @@ endfun
 "set color scheme after plugin is initialized
 set termguicolors
 colorscheme onedark
+
+lua << EOF
+require('hlargs').setup()
+EOF
