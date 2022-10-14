@@ -371,3 +371,5 @@ colorscheme onedark
 lua << EOF
 require('hlargs').setup()
 EOF
+
+let g:quickr_preview_exit_on_enter = 1
