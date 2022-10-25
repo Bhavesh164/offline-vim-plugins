@@ -208,11 +208,20 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
 end
--- require'lspconfig'.intelephense.setup{}
+-- enable lsp capabilities
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
+}
  local servers = { 'intelephense' }
  for _, lsp in ipairs(servers) do
    nvim_lsp[lsp].setup {
-	 capabilities =capabilities,
+     capabilities =capabilities,
      on_attach = on_attach,
      cmd={"intelephense","--stdio"},
      flags = {
