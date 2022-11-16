@@ -1,5 +1,6 @@
 inoremap kj <Esc>
 :set tabstop=4
+:set path=.,,** "current directory search with tabfind
 :set shiftwidth=4
 :set autoindent
 :set smartindent
