@@ -130,6 +130,7 @@ Plug 'AndrewRadev/multichange.vim' "mark multiple advanced version
 Plug 'AndrewRadev/splitjoin.vim'  " bindings are gJ and gS
 Plug 'AckslD/nvim-neoclip.lua' "clipboard manager for telescope
 Plug 'm-demare/hlargs.nvim'  " make function arguments color separate
+Plug 'brooth/far.vim' "modern find and replace
 call plug#end()
 
 
