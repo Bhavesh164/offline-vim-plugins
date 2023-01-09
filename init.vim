@@ -459,6 +459,9 @@ endif
 "source abbrevations
 source /home/bhavesh/.config/nvim/general/abb.vim
 
+" Make Y yank till end of line
+vnoremap y ygv<Esc>
+
 "key mappings
 nnoremap <leader>c :!chmod +x %<CR>
 let g:switch_mapping = "-"
