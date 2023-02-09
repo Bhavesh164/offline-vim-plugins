@@ -464,6 +464,7 @@ vnoremap y ygv<Esc>
 
 "key mappings
 nnoremap <leader>c :!chmod +x %<CR>
+nnoremap <leader>v 0y$$
 let g:switch_mapping = "-"
 
 "text objects key mappings
