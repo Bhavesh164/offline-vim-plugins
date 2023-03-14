@@ -90,9 +90,7 @@ require('lazy').setup({
       'folke/neodev.nvim',
     },
   },
-  { -- Autocompletion
-    'hrsh7th/cmp-buffer',
-  },
+
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
@@ -173,7 +171,25 @@ require('lazy').setup({
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
   },
-
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "<CurrentMajor>.*",
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp"
+  },
+  {
+    'SirVer/ultisnips'
+  },
+  {
+  'honza/vim-snippets'
+  },
+  {
+    'mlaursen/vim-react-snippets'
+  },
+  {
+    "hrsh7th/cmp-buffer"
+  },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -202,6 +218,9 @@ vim.wo.number = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
+vim.o.shiftwidth=4
+vim.o.tabstop=4
+vim.o.autoindent=true
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -212,7 +231,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.breakindent = true
 
 -- Save undo history
-vim.o.undofile = false
+vim.o.undofile = true
 
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
@@ -285,14 +304,14 @@ vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>o', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-vim.keymap.set('i', 'kj', '<Esc>' , { desc = 'escape to insert mode' })
-vim.keymap.set('n', 'tt', ':' , { desc = 'escape to insert mode' })
+vim.keymap.set('i', 'kj','<Esc>', { desc = 'Go to normal mode' })
+vim.keymap.set('n', 'tt',':', { desc = 'go to command mode' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim', 'php' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim','php' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -451,7 +470,9 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
-
+-- load snippets
+require('luasnip.loaders.from_vscode').lazy_load()
+require("luasnip.loaders.from_snipmate").load({ include = { "php", "javascript" } }) --for snippets to work need to install vim-snippets plugin
 -- nvim-cmp setup
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
@@ -492,8 +513,8 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
-    { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'nvim_lsp' },
     { name = 'buffer' },
   },
 }
