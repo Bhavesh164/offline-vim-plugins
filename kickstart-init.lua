@@ -69,6 +69,16 @@ require('lazy').setup({
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+  'tpope/vim-surround',
+  { 'AndrewRadev/deleft.vim'}, --dh keybinding to delete blocks like if/ try,catch, div
+  { 'AndrewRadev/tagalong.vim'}, --rename a html tag
+  { 'AndrewRadev/multichange.vim'}, --mark multiple advanced version
+  { 'AndrewRadev/splitjoin.vim'},  --bindings are gJ and gS
+  { 'm-demare/hlargs.nvim',
+    config= function()
+      require('hlargs').setup()
+    end,
+  },  -- make function arguments color separate
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -189,6 +199,13 @@ require('lazy').setup({
   },
   {
     "hrsh7th/cmp-buffer"
+  },
+  {
+    'gelguy/wilder.nvim',
+    config = function()
+      local wilder = require('wilder')
+      wilder.setup({modes = {':', '/', '?'}})
+    end,
   },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
