@@ -189,7 +189,7 @@ require('lazy').setup({
     build = "make install_jsregexp"
   },
   {
-    'SirVer/ultisnips'
+    'SirVer/ultisnips' -- python3 -m pip install --user --upgrade pynvim
   },
   {
   'honza/vim-snippets'
@@ -205,6 +205,12 @@ require('lazy').setup({
     config = function()
       local wilder = require('wilder')
       wilder.setup({modes = {':', '/', '?'}})
+    end,
+  },
+  {
+    'phaazon/hop.nvim',
+    config= function()
+    require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end,
   },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -323,6 +329,7 @@ vim.keymap.set('n', '<leader>o', require('telescope.builtin').live_grep, { desc 
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('i', 'kj','<Esc>', { desc = 'Go to normal mode' })
 vim.keymap.set('n', 'tt',':', { desc = 'go to command mode' })
+vim.keymap.set('n', '<leader>h','<cmd>HopWord<CR>', { desc = 'go to command mode' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
