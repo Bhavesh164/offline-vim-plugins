@@ -330,6 +330,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('i', 'kj','<Esc>', { desc = 'Go to normal mode' })
 vim.keymap.set('n', 'tt',':', { desc = 'go to command mode' })
 vim.keymap.set('n', '<leader>h','<cmd>HopWord<CR>', { desc = 'go to command mode' })
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex,{desc="shortcut for netrw"})
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
