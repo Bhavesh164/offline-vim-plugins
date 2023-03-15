@@ -244,6 +244,7 @@ vim.o.mouse = 'a'
 vim.o.shiftwidth=4
 vim.o.tabstop=4
 vim.o.autoindent=true
+vim.o.smartindent=true
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -254,7 +255,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.breakindent = true
 
 -- Save undo history
-vim.o.undofile = true
+vim.o.undofile = false
 
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
@@ -330,13 +331,13 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('i', 'kj','<Esc>', { desc = 'Go to normal mode' })
 vim.keymap.set('n', 'tt',':', { desc = 'go to command mode' })
 vim.keymap.set('n', '<leader>h','<cmd>HopWord<CR>', { desc = 'go to command mode' })
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex,{desc="shortcut for netrw"})
+vim.keymap.set("n", "<leader>t", vim.cmd.Ex ,{desc="shortcut for netrw"})
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim','php' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim','php', 'html' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
