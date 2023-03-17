@@ -68,6 +68,7 @@ require('lazy').setup({
 
   -- Git related plugins
   'tpope/vim-fugitive',
+  'windwp/nvim-ts-autotag',
   'tpope/vim-rhubarb',
   'tpope/vim-surround',
   { 'AndrewRadev/deleft.vim'}, --dh keybinding to delete blocks like if/ try,catch, div
@@ -82,6 +83,7 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
+  'jwalton512/vim-blade',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -338,7 +340,7 @@ vim.keymap.set("n", "<leader>t", vim.cmd.Ex ,{desc="shortcut for netrw"})
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim','php'},
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim','php' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -546,5 +548,10 @@ cmp.setup {
   },
 }
 
+-- autotag configurations
+local status, autotag = pcall(require, "nvim-ts-autotag")
+if (not status) then return end
+
+autotag.setup({})
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
