@@ -82,7 +82,7 @@ require('lazy').setup({
   },  -- make function arguments color separate
 
   -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
+  --'tpope/vim-sleuth',
   'jwalton512/vim-blade',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
@@ -577,3 +577,12 @@ lspconfig.emmet_ls.setup({
 })
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- for reidnentation
+vim.api.nvim_exec([[
+augroup AutoIndent
+autocmd!
+autocmd BufWritePre * let save_cursor = getpos(".") | execute 'normal! ggVG=' | call setpos(".", save_cursor)
+augroup END
+]], false)
+
