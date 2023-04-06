@@ -71,6 +71,7 @@ require('lazy').setup({
   'windwp/nvim-ts-autotag',
   'tpope/vim-rhubarb',
   'tpope/vim-surround',
+  'vim-autoformat/vim-autoformat',
   'rafamadriz/friendly-snippets',
   { 'AndrewRadev/deleft.vim'}, --dh keybinding to delete blocks like if/ try,catch, div
   { 'AndrewRadev/tagalong.vim'}, --rename a html tag
@@ -580,10 +581,13 @@ lspconfig.emmet_ls.setup({
 -- vim: ts=2 sts=2 sw=2 et
 
 -- for reidnentation
-vim.api.nvim_exec([[
-augroup AutoIndent
-autocmd!
-autocmd BufWritePre * let save_cursor = getpos(".") | execute 'normal! ggVG=' | call setpos(".", save_cursor)
-augroup END
-]], false)
+vim.cmd([[
+  autocmd FileType javascriptreact setlocal expandtab shiftwidth=4 softtabstop=4
+]])
+
+vim.cmd([[
+	au BufWrite * :Autoformat
+]])
+
+
 
