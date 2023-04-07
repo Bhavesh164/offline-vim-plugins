@@ -585,6 +585,7 @@ vim.cmd([[
 ]])
 
 vim.cmd([[
-	au BufWrite * :Autoformat
+	au BufWrite *.jsx :Autoformat
 ]])
+
 
