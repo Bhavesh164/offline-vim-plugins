@@ -71,6 +71,7 @@ require('lazy').setup({
   'windwp/nvim-ts-autotag',
   'tpope/vim-rhubarb',
   'tpope/vim-surround',
+  'stevearc/oil.nvim',  -- use :Oil to open the buffer
   'vim-autoformat/vim-autoformat',
   { 'AndrewRadev/deleft.vim'}, --dh keybinding to delete blocks like if/ try,catch, div
   { 'AndrewRadev/tagalong.vim'}, --rename a html tag
