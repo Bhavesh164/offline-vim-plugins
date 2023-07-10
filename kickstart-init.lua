@@ -71,6 +71,16 @@ require('lazy').setup({
   'windwp/nvim-ts-autotag',
   'tpope/vim-rhubarb',
   'tpope/vim-surround',
+  {
+    	"HampusHauffman/block.nvim",
+    	config = function()
+        	require("block").setup({
+  				percent = 0.8,
+				depth = 4,
+   				automatic = true,
+   			})
+   		end
+   },
   'stevearc/oil.nvim',  -- use :Oil to open the buffer
   'vim-autoformat/vim-autoformat',
   { 'AndrewRadev/deleft.vim'}, --dh keybinding to delete blocks like if/ try,catch, div
