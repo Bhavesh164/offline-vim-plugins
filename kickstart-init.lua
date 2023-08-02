@@ -71,6 +71,7 @@ require('lazy').setup({
   'windwp/nvim-ts-autotag',
   'tpope/vim-rhubarb',
   'tpope/vim-surround',
+  'lfilho/cosco.vim',   -- cosco.nvim plugin insert semicolon at the end of file. IT works well with php, javascript
   {
   "HampusHauffman/block.nvim",
    config = function()
@@ -598,5 +599,20 @@ vim.cmd([[
 vim.cmd([[
 	au BufWrite *.jsx :Autoformat
 ]])
+
+-- Define the autocmds
+local function setup_autocmds()
+    vim.cmd([[
+        augroup cosco_comma_semicolon
+        autocmd!
+        autocmd FileType javascript,css,php nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
+        autocmd FileType javascript,css,php imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
+        augroup END
+    ]])
+end
+
+-- Call the setup function
+setup_autocmds()
+
 
 
