@@ -71,6 +71,7 @@ require('lazy').setup({
   'windwp/nvim-ts-autotag',
   'tpope/vim-rhubarb',
   'tpope/vim-surround',
+  'tpope/vim-abolish', -- convert into upper,snake case
   'lfilho/cosco.vim',   -- cosco.nvim plugin insert semicolon at the end of file. IT works well with php, javascript
   {
   "HampusHauffman/block.nvim",
