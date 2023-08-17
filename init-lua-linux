@@ -71,6 +71,7 @@ require('lazy').setup({
   'windwp/nvim-ts-autotag',
   'tpope/vim-rhubarb',
   'tpope/vim-surround',
+  'tpope/vim-abolish', -- convert into upper,snake case
   'vim-autoformat/vim-autoformat',
   'rafamadriz/friendly-snippets',
   { 'AndrewRadev/deleft.vim'}, --dh keybinding to delete blocks like if/ try,catch, div
