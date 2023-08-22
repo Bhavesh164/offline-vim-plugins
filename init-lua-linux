@@ -338,6 +338,7 @@ vim.keymap.set('i', 'kj','<Esc>', { desc = 'Go to normal mode' })
 vim.keymap.set('n', 'tt',':', { desc = 'go to command mode' })
 vim.keymap.set('n', '<leader>h','<cmd>HopWord<CR>', { desc = 'go to command mode' })
 vim.keymap.set("n", "<leader>t", vim.cmd.Ex ,{desc="shortcut for netrw"})
+vim.keymap.set('n', 'X', '<C-v>', { noremap = true }) --for mapping visual block mode
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
