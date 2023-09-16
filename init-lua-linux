@@ -71,6 +71,7 @@ require('lazy').setup({
   'windwp/nvim-ts-autotag',
   'tpope/vim-rhubarb',
   'tpope/vim-surround',
+  'nvim-pack/nvim-spectre',
   'tpope/vim-abolish', -- convert into upper,snake case
   'vim-autoformat/vim-autoformat',
   'rafamadriz/friendly-snippets',
