@@ -84,6 +84,10 @@ require('lazy').setup({
    	})
    end
    },
+   {
+  	'AckslD/muren.nvim',
+  	config = true,
+   },
   'stevearc/oil.nvim',  -- use :Oil to open the buffer
   'vim-autoformat/vim-autoformat',
   { 'AndrewRadev/deleft.vim'}, --dh keybinding to delete blocks like if/ try,catch, div
