@@ -84,7 +84,10 @@ require('lazy').setup({
       require('hlargs').setup()
     end,
   },  -- make function arguments color separate
-
+  {
+  	'AckslD/muren.nvim',
+  	config = true,
+  },
   -- Detect tabstop and shiftwidth automatically
   --'tpope/vim-sleuth',
   'jwalton512/vim-blade',
