@@ -621,5 +621,15 @@ end
 -- Call the setup function
 setup_autocmds()
 
+-- for windows to remove ^M
+vim.cmd [[
+  command! -nargs=0 WinRemove :lua vim.fn.WinRemove()
+]]
+
+vim.fn.WinRemove = function()
+    vim.api.nvim_command('%s/\r//g')
+end
+
+
 
 
