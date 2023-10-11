@@ -629,7 +629,5 @@ vim.cmd [[
 vim.fn.WinRemove = function()
     vim.api.nvim_command('%s/\r//g')
 end
-
-
-
-
+-- Visual Maps
+vim.keymap.set("v", "<leader>r", "\"hy:%s#<C-r>h##g<left><left>",{ desc = "easily find and replace"})			    -- Replace all instances of highlighted words
