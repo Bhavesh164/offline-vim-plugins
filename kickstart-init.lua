@@ -642,14 +642,15 @@ end
 -- Visual Maps
 vim.keymap.set("v", "<leader>r", "\"hy:%s#<C-r>h##g<left><left>",{ desc = "easily find and replace"})			    -- Replace all instances of highlighted words
 -- disable pyslp warnings
-require('lspconfig').pylsp.setup {
+local status, _ = pcall(function() require('lspconfig').pylsp.setup {
  settings = {
-   pylsp = {
-     plugins = {
-       pycodestyle = {
-         ignore = {"E501"}
-       }
+ pylsp = {
+   plugins = {
+     pycodestyle = {
+       ignore = {"E501","E402"}
      }
    }
  }
-}
+ }
+} end)
+
