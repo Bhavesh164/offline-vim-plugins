@@ -641,7 +641,7 @@ vim.fn.WinRemove = function()
 end
 -- Visual Maps
 vim.keymap.set("v", "<leader>r", "\"hy:%s#<C-r>h##g<left><left>",{ desc = "easily find and replace"})			    -- Replace all instances of highlighted words
--- disable pyslp warnings
+-- disable pyslp warnings (install pyright to work correctly (use nvm (node version manager) to install)
 local status, _ = pcall(function() require('lspconfig').pylsp.setup {
  settings = {
  pylsp = {
@@ -653,4 +653,3 @@ local status, _ = pcall(function() require('lspconfig').pylsp.setup {
  }
  }
 } end)
-
