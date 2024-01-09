@@ -305,6 +305,9 @@ require('telescope').setup {
         ['<C-d>'] = false,
       },
     },
+    {
+	grep_tool= "rg", -- use ripgrep for grep tool
+    },
   },
 }
 
