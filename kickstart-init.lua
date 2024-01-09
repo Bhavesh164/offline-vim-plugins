@@ -327,8 +327,12 @@ require('telescope').setup {
         ['<C-d>'] = false,
       },
     },
+    {
+	grep_tool= "rg", -- use ripgrep for grep tool
+    },
   },
 }
+
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
