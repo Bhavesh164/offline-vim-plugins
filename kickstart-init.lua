@@ -327,11 +327,18 @@ require('telescope').setup {
         ['<C-d>'] = false,
       },
     },
-    {
-	grep_tool= "rg", -- use ripgrep for grep tool
+  vimgrep_arguments= { --optional
+	'rg',
+	'--color=never',
+	'--no-heading',
+	'--with-filename',
+	'--line-number',
+	'--column',
+	'--smart-case'
     },
   },
 }
+
 
 
 -- Enable telescope fzf native, if installed
