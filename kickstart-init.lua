@@ -653,3 +653,5 @@ end
 -- Visual Maps
 vim.keymap.set("v", "<leader>r", "\"hy:%s#<C-r>h##g<left><left>",{ desc = "easily find and replace"})			    -- Replace all instances of highlighted words
 -- disable pyslp warnings (install pyright to work correctly (use nvm (node version manager) to install)
+-- sovle the python3 service provider error
+vim.g.python3_host_prog = "C:\\Users\\Bhavesh Verma\\.pyenv\\pyenv-win\\versions\\3.8.10\\python.exe"
