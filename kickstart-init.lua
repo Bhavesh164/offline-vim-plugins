@@ -655,3 +655,17 @@ vim.keymap.set("v", "<leader>r", "\"hy:%s#<C-r>h##g<left><left>",{ desc = "easil
 -- disable pyslp warnings (install pyright to work correctly (use nvm (node version manager) to install)
 -- sovle the python3 service provider error
 -- vim.g.python3_host_prog = "C:\\Users\\Bhavesh Verma\\.pyenv\\pyenv-win\\versions\\3.8.10\\python.exe"
+require("ibl").setup {
+    indent = { highlight = highlight, char = '┊', },
+    whitespace = {
+        highlight = highlight,
+        remove_blankline_trail = false,
+    },
+    scope = { enabled = false },
+}
+cmp.setup.cmdline('/', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = 'buffer' }
+      }
+})
