@@ -674,6 +674,9 @@ cmp.setup.cmdline('/', {
         { name = 'buffer' }
       }
 })
+-- Disable folding initially
+vim.cmd('set nofoldenable')
+
 -- Set foldmethod to indent for Lua files (use zc to close, zR to unfold all)
 vim.api.nvim_exec([[
   augroup myFoldingSettings
@@ -682,4 +685,5 @@ vim.api.nvim_exec([[
     autocmd FileType python setlocal foldmethod=indent
   augroup END
 ]], false)
+
 
