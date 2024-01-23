@@ -74,16 +74,6 @@ require('lazy').setup({
   'nvim-pack/nvim-spectre',
   'tpope/vim-abolish', -- convert into upper,snake case
   'lfilho/cosco.vim',   -- cosco.nvim plugin insert semicolon at the end of file. IT works well with php, javascript
-  {
-  "HampusHauffman/block.nvim",
-   config = function()
-   	require("block").setup({
-  		percent = 0.8,
-		depth = 4,
-   		automatic = true,
-   	})
-   end
-   },
    {
   	'AckslD/muren.nvim',
   	config = true,
