@@ -674,3 +674,12 @@ cmp.setup.cmdline('/', {
         { name = 'buffer' }
       }
 })
+-- Set foldmethod to indent for Lua files (use zc to close, zR to unfold all)
+vim.api.nvim_exec([[
+  augroup myFoldingSettings
+    autocmd!
+    autocmd FileType lua setlocal foldmethod=indent
+    autocmd FileType python setlocal foldmethod=indent
+  augroup END
+]], false)
+
