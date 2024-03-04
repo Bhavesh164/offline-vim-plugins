@@ -114,7 +114,22 @@ require('lazy').setup({
 
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+    dependencies = {
+	'hrsh7th/cmp-nvim-lsp',
+	{
+		'L3MON4D3/LuaSnip',
+		build = (function()
+			-- Build Step is needed for regex support in snippets
+			-- This step is not supported in many windows environments
+			-- Remove the below condition to re-enable on windows
+			if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
+				return
+			end
+			return 'make install_jsregexp'
+		end)(),
+	},
+	'saadparwaiz1/cmp_luasnip'
+    },
   },
 
   -- Useful plugin to show you pending keybinds.
@@ -191,13 +206,6 @@ require('lazy').setup({
     config = function()
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
-  },
-  {
-    "L3MON4D3/LuaSnip",
-    -- follow latest release.
-    version = "<CurrentMajor>.*",
-    -- install jsregexp (optional!).
-    build = "make install_jsregexp"
   },
   {
     'SirVer/ultisnips' -- python3 -m pip install --user --upgrade pynvim
