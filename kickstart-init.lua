@@ -648,7 +648,6 @@ local function setup_autocmds()
         augroup cosco_comma_semicolon
         autocmd!
         autocmd FileType javascript,css,php nmap <silent> <Leader>; <Plug>(cosco-commaOrSemiColon)
-        autocmd FileType javascript,css,php imap <silent> <Leader>; <c-o><Plug>(cosco-commaOrSemiColon)
         augroup END
     ]])
 end
