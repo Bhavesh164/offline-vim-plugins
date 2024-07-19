@@ -319,6 +319,22 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- replace word boundary key mapping
+vim.keymap.set('n', '<leader>r', function()
+    -- Yank the word under the cursor
+    vim.cmd('normal! yiw')
+    
+    -- Get the yanked word from the unnamed register
+    local word = vim.fn.getreg('"')
+    
+    -- Escape special characters in the word
+    local escaped_word = vim.fn.escape(word, [[/\]])
+    
+    -- Construct and execute the substitution command
+    local cmd = string.format('%%s/\\<%s\\>/', escaped_word)
+    vim.fn.feedkeys(':' .. cmd, 'n')
+end, { silent = true })
+
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
