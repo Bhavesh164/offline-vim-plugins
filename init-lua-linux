@@ -684,5 +684,14 @@ vim.api.nvim_exec([[
   augroup END
 ]], false)
 
+-- Change directory too (if you want :e somefile to work from that location
+vim.api.nvim_create_user_command("EHere", function()
+  local dir = vim.fn.expand("%:p:h")
+  vim.cmd("cd " .. dir)
+  local filepath = vim.fn.expand("%:p")
+  vim.cmd("edit " .. filepath)
+end, {})
+
+
 
 
