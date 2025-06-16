@@ -570,6 +570,15 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+
+-- Setup LSP servers directly in case setup_handlers error
+-- for server_name, server_settings in pairs(servers) do
+--   require('lspconfig')[server_name].setup {
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     settings = server_settings,
+--   }
+-- end
 -- load snippets
 require('luasnip.loaders.from_vscode').lazy_load()
 require("luasnip.loaders.from_snipmate").load({ include = { "php", "javascript" } }) --for snippets to work need to install vim-snippets plugin
