@@ -170,6 +170,21 @@ require("lazy").setup({
           { name = "buffer" },
         }),
       })
+      ------------------------------------------------------------------
+        -- CMDLINE COMPLETION
+      ------------------------------------------------------------------
+
+         -- `/ and ?` search (buffer words)
+        local search_cmdline_opts = {
+          mapping = cmp.mapping.preset.cmdline(),
+          sources = {
+            { name = "buffer", keyword_length = 2 },
+          },
+        }
+
+        for _, cmd in ipairs({ "/", "?" }) do
+          cmp.setup.cmdline(cmd, search_cmdline_opts)
+        end
     end,
   },
 
@@ -215,6 +230,32 @@ vim.lsp.config("lua_ls", {
 })
 
 vim.lsp.enable("lua_ls")
+
+-- Setup pylsp (Python)
+vim.lsp.config("pylsp", {
+  cmd = { "pylsp" },
+  root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile", ".git" },
+  filetypes = { "python" },
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = { enabled = true },
+        pyflakes = { enabled = true },
+        pylint = { enabled = false },
+      },
+    },
+  },
+})
+
+vim.lsp.enable("pylsp")
+-- in orfer to work poython lsp server
+-- first install pylsp using pip3 install python-lsp-server
+-- for this to work we need to check which pylsp 
+-- if pylsp shows nothing, find where pip installed it:
+-- pip3 show python-lsp-server | grep Location
+-- open your .bashrc and then add following Command
+-- export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+
 
 --------------------------------------------------------------------
 -- KEYMAPS
