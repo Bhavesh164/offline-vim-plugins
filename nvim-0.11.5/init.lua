@@ -35,7 +35,7 @@ require("lazy").setup(
         "AndrewRadev/splitjoin.vim",
         -- Hop for quick navigation
         {
-            "phaazon/hop.nvim",
+            "smoka7/hop.nvim",
             config = function()
                 require("hop").setup {keys = "etovxqpdygfblzhckisuran"}
             end
